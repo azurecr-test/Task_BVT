@@ -1,5 +1,4 @@
 steps:
-workingDirectory: ./tasks-workdir-issue
 # Docker file in subdir
 - build: -t i2 -f ./images/Dockerfile ./images
 
