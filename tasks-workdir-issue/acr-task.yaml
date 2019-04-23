@@ -1,6 +1,6 @@
 steps:
 # Docker file in subdir
-- build: -t i2 -f ./tasks-workdir-issue/images/Dockerfile ./tasks-workdir-issue/images
+- build: -t i2 -f ./images/Dockerfile ./images
 
 # Docker file in referenced by workspace
-- build: -t i2 -f ./tasks-workdir-issue/Dockerfile ./tasks-workdir-issue/images
+- build: -t i2 -f ./Dockerfile ./images
