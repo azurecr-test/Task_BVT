@@ -1,0 +1,3 @@
+version: v1.0.0
+steps:
+  - cmd: microsoft/azure-cli az login --identity
