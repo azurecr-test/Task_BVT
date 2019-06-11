@@ -5,5 +5,4 @@ steps:
   - cmd: microsoft/azure-cli az cloud register -n dogfood --endpoint-active-directory https://login.windows-ppe.net --endpoint-active-directory-graph-resource-id https://graph.ppe.windows.net/ --endpoint-active-directory-resource-id https://management.core.windows.net/ --endpoint-gallery https://current.gallery.azure-test.net/ --endpoint-management https://management.core.windows.net/ --endpoint-resource-manager https://api-dogfood.resources.windows-int.net/ --suffix-storage-endpoint core.test-cint.azure-test.net --suffix-keyvault-dns vault.azure-int.net 
   - cmd: microsoft/azure-cli az cloud set -n dogfood 
   - cmd: microsoft/azure-cli az login --identity
-  - cmd: echo 'value is: {{.Values.registry}}'
   - cmd: microsoft/azure-cli az acr repository show-tags -n {{.Values.registry}} --repository hello-world
