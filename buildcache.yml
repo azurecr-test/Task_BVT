@@ -1,0 +1,6 @@
+version: v1.1.0
+alias:
+  directive: '%'
+steps:
+  - build: -t %Registry/hello-world:%ID . -f hello-world.dockerfile
+    cache: enabled

@@ -1,7 +1,9 @@
-version: v1.0.0
+version: v1.1.0
 steps:
-  - build: -t {{.Run.Registry}}/hello-world:{{.Run.ID}} . -f hello-world.dockerfile
-  - push: ["{{.Run.Registry}}/hello-world:{{.Run.ID}}"]
-  - cmd: microsoft/azure-cli az cloud set -n AzureChinaCloud
-  - cmd: microsoft/azure-cli az login --identity
-  - cmd: microsoft/azure-cli az acr repository show-tags -n {{.Values.registry}} --repository hello-world
+  - build: -t $Registry/hello-world:$ID . -f hello-world.dockerfile
+    cache: enabled
+  - push:
+      - $Registry/hello-world:$ID
+  - cmd: az cloud set -n AzureChinaCloud
+  - cmd: az login --identity
+  - cmd: az acr repository show-tags -n $RegistryName --repository hello-world
