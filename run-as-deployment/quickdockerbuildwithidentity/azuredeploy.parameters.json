@@ -3,13 +3,16 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
       "registryName": {
-        "value": "mytaskrunregistry"
+        "value": "taskrundeploymenteusdf"
       },
       "taskRunName": {
-        "value": "myquickdockerbuildrun"
+        "value": "quickdockerbuildrun"
       },
       "sourceLocation": {
         "value": "https://github.com/Azure-Samples/acr-build-helloworld-node.git"
-      }
+      },
+      "userAssignedIdentity":{
+          "value": "/subscriptions/3647315e-0c5b-4ce4-8739-b071e144b2c9/resourcegroups/DeploymentTaskBVTRG/providers/Microsoft.ManagedIdentity/userAssignedIdentities/deploymentIdentityEUS"
+      }    
     }
   }

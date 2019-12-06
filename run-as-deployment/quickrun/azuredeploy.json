@@ -75,7 +75,7 @@
       "location": "[parameters('location')]",
       "comments": "Container registry for storing docker images",
       "tags": {
-        "displayName": "Container Registry",
+        "displayName": "quickrunregistries",
         "container.registry": "[parameters('registryName')]"
       },
       "sku": {
@@ -102,6 +102,18 @@
               "platform": {
                 "os": "linux",
                 "architecture": "amd64"
+              },
+              "credentials": {
+                "apiVersion": "2018-09-01",
+                "customRegistries": {
+                    "taskrundeploymentbaseimage.azurecr-test.io": 
+                    {
+                        "identity": "dc66dc3a-1191-4eb9-9117-5bd3715692a3"
+                    }
+                  },
+                  "sourceRegistry": {
+                    "loginMode": "Default"
+                }
               }
             }
           }
