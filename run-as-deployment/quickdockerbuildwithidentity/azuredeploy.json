@@ -17,6 +17,20 @@
         "description": "Name of your Azure Container Registry"
       }
     },
+     "loginServer": {
+      "type": "string",
+      "minLength": 5,
+      "maxLength": 50,
+      "metadata": {
+        "description": "Login server of your Azure Container Registry"
+      }
+    },
+     "identityClientId": {
+    "type": "string",
+    "metadata": {
+        "description": "The Client Id of Identity"
+      }
+    },
     "registrySku": {
       "type": "string",
       "metadata": {
