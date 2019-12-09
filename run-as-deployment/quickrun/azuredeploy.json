@@ -17,6 +17,20 @@
         "description": "Name of your Azure Container Registry"
       }
     },
+    "loginServer": {
+      "type": "string",
+      "minLength": 5,
+      "maxLength": 50,
+      "metadata": {
+        "description": "Login server of your Azure Container Registry"
+      }
+    },
+     "identityClientId": {
+    "type": "string",
+    "metadata": {
+        "description": "The Client Id of Identity"
+      }
+    },
     "registrySku": {
       "type": "string",
       "metadata": {
@@ -106,9 +120,9 @@
               "credentials": {
                 "apiVersion": "2018-09-01",
                 "customRegistries": {
-                    "taskrundeploymentbaseimage.azurecr-test.io": 
+                     "[parameters('loginServer')]":  
                     {
-                        "identity": "dc66dc3a-1191-4eb9-9117-5bd3715692a3"
+                        "identity": "[parameters('identityClientId')]"
                     }
                   },
                   "sourceRegistry": {
