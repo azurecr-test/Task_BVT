@@ -9,10 +9,7 @@
       "value": "myquickrun"
     },
     "taskContent": {
-        "value": "version: v1.0.0\nsteps:\n - cmd: taskrundeploymentbaseimage.azurecr-test.io/hello-world:lts"
-    },
-      "userAssignedIdentity":{
-          "value": "/subscriptions/3647315e-0c5b-4ce4-8739-b071e144b2c9/resourcegroups/DeploymentTaskBVTRG/providers/Microsoft.ManagedIdentity/userAssignedIdentities/deploymentIdentityEUS"
+        "value": "version: v1.0.0\nsteps:\n - cmd: bash echo hello-world\n - cmd: taskrundeploymentbaseimage.azurecr-test.io/hello-world:lts"
     }
   }
 }
