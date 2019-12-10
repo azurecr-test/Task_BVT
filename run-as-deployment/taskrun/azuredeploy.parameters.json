@@ -10,6 +10,9 @@
       },
       "sourceLocation": {
         "value": "https://github.com/Azure-Samples/acr-build-helloworld-node.git"
+      },
+      "taskName": {
+        "value": "taskrun"
       }
     }
   }
