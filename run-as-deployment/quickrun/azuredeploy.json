@@ -73,7 +73,7 @@
     }
   },
   "variables": {
-    "encodedTaskContent": "[base64(parameters('taskContent'))]",
+    "encodedTaskContent": "[parameters('taskContent')]",
     "identity": {
       "type": "UserAssigned",
       "userAssignedIdentities": {
