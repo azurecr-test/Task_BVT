@@ -9,7 +9,7 @@
       "value": "myquickrun"
     },
     "taskContent": {
-        "value": "version: v1.0.0\nsteps:\n - cmd: bash echo hello-world"
+        "value": "version: v1.0.0\nsteps:\n  - cmd: bash echo hello-world\n  - cmd: deploymentregistryeusdf.azurecr-test.io/hello-world:lts"
     }
   }
 }
