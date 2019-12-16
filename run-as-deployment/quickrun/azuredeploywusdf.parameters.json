@@ -1,0 +1,15 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "registryName": {
+      "value": "taskrundeploymentwusdf"
+    },
+    "taskRunName": {
+      "value": "myquickrun"
+    },
+    "taskContent": {
+        "value": "version: v1.0.0\nsteps:\n  - cmd: bash echo hello-world\n  - cmd: deploymentregistrywusdf.azurecr-test.io/hello-world:lts"
+    }
+  }
+}
