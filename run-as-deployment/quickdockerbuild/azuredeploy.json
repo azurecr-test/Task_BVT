@@ -64,6 +64,13 @@
       },
       "defaultValue": "Dockerfile"
     },
+     "forceUpdateTag": {
+      "type": "string",
+      "metadata": {
+        "description": "The parameter of runRequest to force schedule a run"
+      },
+      "defaultValue": "null"
+    },
     "repository": {
       "type": "string",
       "metadata": {
@@ -112,6 +119,7 @@
           ],
           "identity": "[if(not(empty(parameters('userAssignedIdentity'))), variables('identity'), '')]",
           "properties": {
+            "forceUpdateTag": "[parameters('forceUpdateTag')]",
             "runRequest": {
               "type": "DockerBuildRequest",
               "dockerFilePath": "[parameters('dockerFilePath')]",
