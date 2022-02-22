@@ -1,4 +1,4 @@
 FROM busybox
 COPY ./git-lfs.png /tmp/
 RUN ls -s /tmp
-RUN if [[ `ls -s /tmp/ | tail -n1 | awk '{print $1}'` -gt 100 ]]; then echo 'File size -gt 100k'; exit 1; else echo 'File size -lt 100k'; fi
+RUN fileSize=$(ls -s /tmp/ | tail -n1 | awk '{print $1}'); if [[ $fileSize -ge 100 ]]; then echo "Got the size of the binary file: $fileSize"; else echo "The size of the binary file is not expected: $fileSize" exit 1; fi
