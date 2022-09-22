@@ -1,0 +1,10 @@
+version: v1.1.0
+steps:
+  - build: -t $Registry/hello-world:$ID . -f hello-world.dockerfile
+    cache: enabled
+  - push:
+      - $Registry/hello-world:$ID
+  - cmd: az cloud register -n canary --endpoint-active-directory https://login.microsoftonline.com --endpoint-active-directory-graph-resource-id https://graph.windows.net/ --endpoint-active-directory-resource-id https://management.core.windows.net/ --endpoint-gallery https://gallery.azure.com/ --endpoint-management https://management.core.windows.net/ --endpoint-resource-manager https://management.azure.com/ --suffix-storage-endpoint core.windows.net --suffix-keyvault-dns vault.azure.net --suffix-acr-login-server azurecr.io
+  - cmd: az cloud set -n canary
+  - cmd: az login --identity
+  - cmd: az acr repository show-tags -n $RegistryName --repository hello-world
