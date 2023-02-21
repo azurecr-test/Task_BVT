@@ -4,5 +4,5 @@ steps:
     cache: enabled
   - push:
       - $Registry/hello-world:$ID
-  - cmd: microsoft/azure-cli az login --identity
-  - cmd: microsoft/azure-cli az acr repository show-tags -n {{.Values.registry}} --repository hello-world
+  - cmd: az login --identity
+  - cmd: az acr repository show-tags -n {{.Values.registry}} --repository hello-world
